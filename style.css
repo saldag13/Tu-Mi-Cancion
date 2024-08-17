@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'MiTipografia'; /* Nombre de la fuente */
+    src: url('Chandelle Display Demo.ttf') format('truetype'); /* Archivo de fuente en formato woff2 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.noto-sans-<uniquifier> {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+iframe {
+
+    width:80% !important;
+    height:152px !important;
+    display: block;
+    
+}
+ 
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-image: url(fondo.png);
+    background-size: cover; /* Asegura que la imagen cubra todo el área del body */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center center; /* Centra la imagen en el cuerpo */
+            background-attachment: fixed;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+    margin-left: 50%;
+    border-radius: 15px;
+    transition: transform 0.6s, z-index 0s;
+     
+
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4); /* Brillo blanco */
+            /* Puedes ajustar el tamaño del brillo cambiando los valores */
+            border-radius: 15px;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.4); /* Brillo blanco */
+}
+
+.back {
+    z-index: 0;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.4); /* Brillo blanco */
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre el texto y el iframe */
+
+}
+
+.back-content {
+    transform: rotateY(180deg)
+    
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+p{
+        padding: 10%;
+       font-family: 'MiTipografia';
+        font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 23px;
+}
+/* Controller Buttons */
+button {
+    border: none;
+            background-color: white; /* Color de fondo blanco */
+            color: black; /* Color del texto negro para contraste */
+            border-radius: 50%; /* Hace el botón redondo */
+            width: 60px; /* Ancho del botón */
+            height: 60px; /* Altura del botón, igual al ancho para mantener la forma redonda */
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s, background-color 0.3s; /* Transiciones suaves para el efecto de transformado y color */
+            display: flex; /* Alinea el contenido (texto) centrado */
+            align-items: center; /* Alinea verticalmente el contenido */
+            justify-content: center; /* Alinea horizontalmente el contenido */
+            font-size: 38px !important; /* Tamaño del texto */
+}
+.fa-arrow-circle-left{
+margin-top: -7px;
+
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    
+    color: gray;
+}
+div{
+    border-radius: 15px;
+}
+/* Paper stack order */
+
+
+
+
